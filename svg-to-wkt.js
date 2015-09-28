@@ -239,7 +239,7 @@
     var interval_angle = 360 / point_count;
 
     // Genrate the circle.
-    _(point_count).times(function(i) {
+    _.times(point_count, function(i) {
       var angle = (interval_angle * i) * (Math.PI / 180);
       var x = __round(cx + r * Math.cos(angle));
       var y = __round(cy + r * Math.sin(angle));
@@ -280,7 +280,7 @@
     var interval_angle = 360 / point_count;
 
     // Generate the ellipse.
-    _(point_count).times(function(i) {
+    _.times(point_count, function(i) {
       var angle = (interval_angle * i) * (Math.PI / 180);
       var x = __round(cx + rx * Math.cos(angle));
       var y = __round(cy + ry * Math.sin(angle));
@@ -366,7 +366,7 @@
     var count = Math.round(length * SVGtoWKT.DENSITY);
 
     // Interpolate points.
-    _(count+1).times(function(i) {
+    _.times(count+1, function(i) {
       var point = path.getPointAtLength((length * i) / count);
       pts.push(String(__round(point.x))+' '+String(__round(-point.y)));
     });
